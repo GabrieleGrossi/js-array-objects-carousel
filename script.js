@@ -21,7 +21,7 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 */
 
 //Creo il carosello con le immagini
-const imagesList = [
+const images = [
     {
         image: 'img/01.webp',
         title: 'Marvel\'s Spiderman Miles Morale',
@@ -51,9 +51,44 @@ const imagesList = [
 
 //Creo il carosello
 const carouselElement=document.querySelector('div.carousel');
-for(let i=0; i<imagesList.length;i++){
-    carouselElement.innerHTML += 
-    `<div class="carousel-item">
-        <img src="./img/04.webp" alt="Carousel slide image">
-    </div>`;
-}
+
+images.forEach((element, index) => {
+    carouselElement.innerHTML +=
+    `
+    <div class="carousel-item">
+        <img src="${element.image}" alt="">
+    </div>
+    `
+});
+
+const carouselImgsDocument = document.querySelectorAll('img')[0].classList.add('active');
+
+const carouselTextBoxDocument = document.querySelectorAll('.carousel-item')[0].classList.add('active');
+
+let activeIndex = 0;
+
+document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+
+const prevButton = document.querySelector('div.previous-button');
+prevButton.addEventListener('click', function(){
+    if (activeIndex == 0 ) {
+        activeIndex = images.length - 1;
+    } else {
+        activeIndex = activeIndex - 1;
+    }
+
+    document.querySelector('div.carousel-item.active').classList.remove('active');
+    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+});
+
+const nextButton = document.querySelector('div.next-button');
+nextButton.addEventListener('click', function(){
+    if (activeIndex == images.length - 1 ) {
+        activeIndex = 0;
+    } else {
+        activeIndex = activeIndex + 1;
+    }
+
+    document.querySelector('div.carousel-item.active').classList.remove('active');
+    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+});

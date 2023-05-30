@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #001632 ;
+    background-color: #f7b7a4 ;
 }
 main{
     background-color: white;
@@ -24,7 +24,7 @@ main{
 main img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     display: block;
     border-radius: 1rem;
 }
@@ -34,8 +34,8 @@ div.next-button{
     width: 30px;
     height: 30px;
     font-size: 1.4rem;
-    background-color: #001632;
-    color: white;;
+    background-color:#f7b7a4;
+    color: #001632;
     border-radius: 50%;
     display: flex;
 }
@@ -46,7 +46,7 @@ div.next-button i{
 
 div.previous-button:hover,
 div.next-button:hover{
-    background-color: rgb(198, 198, 198);
+    background-color: #bdebf9;
     color: rgb(59, 59, 59);
 }
 
@@ -63,6 +63,7 @@ div.next-button{
 div.carousel .carousel-item{
     display: none;
     height: 100%;
+    width: 100%;
 }
 
 div.carousel .carousel-item.active{
