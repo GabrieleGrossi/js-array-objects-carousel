@@ -28,3 +28,34 @@ main img{
     display: block;
     border-radius: 1rem;
 }
+div.previous-button,
+div.next-button{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 1.4rem;
+    background-color: #001632;
+    color: white;;
+    border-radius: 50%;
+    display: flex;
+}
+div.previous-button i,
+div.next-button i{
+    margin: auto;
+}
+
+div.previous-button:hover,
+div.next-button:hover{
+    background-color: rgb(198, 198, 198);
+    color: rgb(59, 59, 59);
+}
+
+
+div.previous-button{
+    top: 50%;
+}
+
+div.next-button{
+    right: 0;
+    top: 50%;
+}
