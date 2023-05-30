@@ -58,37 +58,49 @@ images.forEach((element, index) => {
     <div class="carousel-item">
         <img src="${element.image}" alt="">
     </div>
+    <div class="carousel-image-info">
+        <h2 class="image-title"">
+            ${element.title}
+        </h2>
+        <p class="image-text">
+            ${element.text}
+        </p>
+    </div>
     `
 });
 
-const carouselImgsDocument = document.querySelectorAll('img')[0].classList.add('active');
+const carouselImgs = document.querySelectorAll('img')[0].classList.add('active');
 
-const carouselTextBoxDocument = document.querySelectorAll('.carousel-item')[0].classList.add('active');
+const carouselText = document.querySelectorAll('.carousel-item')[0].classList.add('active');
 
-let activeIndex = 0;
+let active = 0;
 
-document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+document.querySelectorAll('div.carousel-item')[active].classList.add('active');
 
 const prevButton = document.querySelector('div.previous-button');
 prevButton.addEventListener('click', function(){
-    if (activeIndex == 0 ) {
-        activeIndex = images.length - 1;
+    if (active == 0 ) {
+        active = images.length - 1;
     } else {
-        activeIndex = activeIndex - 1;
+        active = active - 1;
     }
 
     document.querySelector('div.carousel-item.active').classList.remove('active');
-    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+    document.querySelectorAll('div.carousel-item')[active].classList.add('active');
+    document.querySelector('div.carousel-image-info.active').classList.remove('active');
+    document.querySelectorAll('div.carousel-image-info')[active].classList.add('active');
 });
 
 const nextButton = document.querySelector('div.next-button');
 nextButton.addEventListener('click', function(){
-    if (activeIndex == images.length - 1 ) {
-        activeIndex = 0;
+    if (active == images.length - 1 ) {
+        active = 0;
     } else {
-        activeIndex = activeIndex + 1;
+        active = active + 1;
     }
 
     document.querySelector('div.carousel-item.active').classList.remove('active');
-    document.querySelectorAll('div.carousel-item')[activeIndex].classList.add('active');
+    document.querySelectorAll('div.carousel-item')[active].classList.add('active');
+    document.querySelector('div.carousel-image-info.active').classList.remove('active');
+    document.querySelectorAll('div.carousel-image-info')[active].classList.add('active');
 });
