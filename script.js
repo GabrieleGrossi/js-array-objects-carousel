@@ -21,7 +21,7 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 */
 
 //Creo il carosello con le immagini
-const images = [
+const imagesList = [
     {
         image: 'img/01.webp',
         title: 'Marvel\'s Spiderman Miles Morale',
@@ -48,3 +48,12 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+//Creo il carosello
+const carouselElement=document.querySelector('div.carousel');
+for(let i=0; i<imagesList.length;i++){
+    carouselElement.innerHTML += 
+    `<div class="carousel-item">
+        <img src="./img/04.webp" alt="Carousel slide image">
+    </div>`;
+}
