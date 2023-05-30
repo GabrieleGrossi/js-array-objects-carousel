@@ -9,7 +9,7 @@ body{
 main{
     background-color: white;
     color: #001632;
-    /* border-radius: 1rem; */
+    border-radius: 1rem;
     padding: 2rem;
     max-width: 1000px;
     margin: 6rem auto;
@@ -26,4 +26,5 @@ main img{
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 1rem;
 }
