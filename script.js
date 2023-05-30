@@ -58,17 +58,28 @@ images.forEach((element, index) => {
     <div class="carousel-item">
         <img src="${element.image}" alt="">
     </div>
-    <div class="carousel-image-info">
-        <h2 class="image-title"">
-            ${element.title}
-        </h2>
-        <p class="image-text">
-            ${element.text}
+    <div class="carousel-info">
+        <h1> ${element.title}
+        </h1>
+        <p>${element.text}
         </p>
     </div>
     `
 });
+/* ERROR 404 !!!
+const caroselInfo = document.querySelectorAll('div.carousel-info');
 
+images.forEach((element, index)=>{
+    caroselInfo.innerHTML +=
+    `
+    <div class="carousel-info">
+        <h1> ${element.title}
+        </h1>
+        <p>${element.text}
+        </p>
+    </div>
+    `
+})*/
 const carouselImgs = document.querySelectorAll('img')[0].classList.add('active');
 
 const carouselText = document.querySelectorAll('.carousel-item')[0].classList.add('active');
@@ -87,8 +98,6 @@ prevButton.addEventListener('click', function(){
 
     document.querySelector('div.carousel-item.active').classList.remove('active');
     document.querySelectorAll('div.carousel-item')[active].classList.add('active');
-    document.querySelector('div.carousel-image-info.active').classList.remove('active');
-    document.querySelectorAll('div.carousel-image-info')[active].classList.add('active');
 });
 
 const nextButton = document.querySelector('div.next-button');
@@ -101,6 +110,4 @@ nextButton.addEventListener('click', function(){
 
     document.querySelector('div.carousel-item.active').classList.remove('active');
     document.querySelectorAll('div.carousel-item')[active].classList.add('active');
-    document.querySelector('div.carousel-image-info.active').classList.remove('active');
-    document.querySelectorAll('div.carousel-image-info')[active].classList.add('active');
 });

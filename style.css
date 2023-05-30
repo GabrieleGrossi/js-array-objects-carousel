@@ -69,10 +69,8 @@ div.carousel .carousel-item.active{
     display: block;
 }
 
-div.carousel .carousel-image-info{
-    display: none;
-}
-
-div.carousel .carousel-image-info.active{
-    display: inline;
+/* Try to add the text */
+div.carousel-info{
+    text-align: center;
+    color: black;
 }
