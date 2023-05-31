@@ -56,30 +56,13 @@ images.forEach((element, index) => {
     carouselElement.innerHTML +=
     `
     <div class="carousel-item">
+        <h1> ${element.title}
+        </h1>
         <img src="${element.image}" alt="">
-    </div>
-    <div class="carousel-info">
-        <h1> ${element.title}
-        </h1>
         <p>${element.text}
         </p>
-    </div>
-    `
+    </div>`
 });
-/* ERROR 404 !!!
-const caroselInfo = document.querySelectorAll('div.carousel-info');
-
-images.forEach((element, index)=>{
-    caroselInfo.innerHTML +=
-    `
-    <div class="carousel-info">
-        <h1> ${element.title}
-        </h1>
-        <p>${element.text}
-        </p>
-    </div>
-    `
-})*/
 const carouselImgs = document.querySelectorAll('img')[0].classList.add('active');
 
 const carouselText = document.querySelectorAll('.carousel-item')[0].classList.add('active');
@@ -111,3 +94,4 @@ nextButton.addEventListener('click', function(){
     document.querySelector('div.carousel-item.active').classList.remove('active');
     document.querySelectorAll('div.carousel-item')[active].classList.add('active');
 });
+
